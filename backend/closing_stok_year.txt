@@ -1,0 +1,46 @@
+//update payment_due
+SELECT s.sj_no,s.sj_tgl,q.`payment`,@numday:=CAST(q.`payment` AS UNSIGNED),DATE_ADD(sj_tgl,INTERVAL @numday DAY),payment_due FROM t_sj AS s INNER JOIN t_quotation AS q ON s.`so_no` = q.`so_no`
+UPDATE t_sj AS s INNER JOIN t_quotation AS q ON s.`so_no` = q.`so_no`
+SET s.`payment_due` = DATE_ADD(sj_tgl,INTERVAL @numday:=CAST(q.`payment` AS UNSIGNED) DAY)
+
+//--koreksi tahun lalu
+DELETE FROM t_invent WHERE STATUS='out' AND YEAR(tgl)=2022;
+DELETE FROM t_invent WHERE ref LIKE 'CT-%' AND YEAR(tgl)=2022;
+DELETE FROM t_invent WHERE ref LIKE 'PD-%' AND YEAR(tgl)=2022;
+UPDATE t_invent SET used=0 WHERE YEAR(tgl)=2022;
+
+DELETE FROM t_invent WHERE STATUS='out' AND YEAR(tgl)=2023;
+DELETE FROM t_invent WHERE ref LIKE 'CT-%' AND YEAR(tgl)=2023;
+DELETE FROM t_invent WHERE ref LIKE 'PD-%' AND YEAR(tgl)=2023;
+UPDATE t_invent SET used=0 WHERE YEAR(tgl)=2023;
+
+CREATE TABLE `niimockn_db`.`t_invent_baru` ( PRIMARY KEY(`id`),KEY `item_id`( `item_id` ), KEY `ref`( `ref` ))ENGINE=INNODB COLLATE = utf8mb4_unicode_ci COMMENT = '' SELECT `id`, `item_id`, `kode_barang`, `kode_barang_2`, `tgl`, `status`, `ref`, `qty`, `harga`, `used`, `ref_harga`, `keterangan`, `cust_id` FROM `niimockn_db`.`t_invent` WHERE 1 = 0;
+RENAME TABLE `niimockn_db`.`t_invent` TO `niimockn_db`.`t_invent_temp`;
+DELETE FROM t_invent_temp WHERE ref='STOK AWAL 2023';
+
+INSERT INTO t_invent (item_id,kode_barang,kode_barang_2,tgl,STATUS,ref,qty,harga) SELECT item_id,kode_barang,kode_barang_2,tgl,STATUS,ref,qty,harga FROM t_invent_temp WHERE YEAR(tgl)=2022;
+
+//mulai migrasi stock
+create table stok_closing_2022 as select t1.*,(select ifnull(sum(t2.qty),0) from t_invent as t2 where t2.status='out' and t2.used=t1.`id` and year(t2.tgl)=2022) as dipakai
+from t_invent as t1 where t1.status='in' and year(t1.tgl)=2022
+
+//INSERT INTO t_invent (item_id,kode_barang,tgl,`status`,ref,qty,harga)
+//SELECT item_id,kode_barang,'2023-01-01','IN','STOK AWAL 2023',(qty-dipakai),harga FROM stok_closing_2022 WHERE (qty - dipakai) > 0 ;
+
+CREATE TABLE stock_awal_2023 AS
+SELECT item_id,kode_barang,'2023-01-01' AS tgl,'IN' AS `status`,'STOK AWAL 2023' AS ref,(qty-dipakai) AS sisa,harga,cust_id FROM stok_closing_2022 WHERE (qty - dipakai) > 0 ;
+
+INSERT INTO t_invent (item_id,kode_barang,tgl,STATUS,ref,qty,harga,cust_id) SELECT item_id,kode_barang,tgl,STATUS,ref,sisa,harga,cust_id FROM stock_awal_2023 WHERE sisa > 0;
+INSERT INTO t_invent (item_id,kode_barang,kode_barang_2,tgl,STATUS,ref,qty,harga) SELECT item_id,kode_barang,kode_barang_2,tgl,STATUS,ref,qty,harga FROM t_invent_temp WHERE YEAR(tgl)=2023;
+
+//closing 2023
+DROP TABLE IF EXISTS stok_closing_2023;
+CREATE TABLE stok_closing_2023 AS SELECT t1.*,(SELECT IFNULL(SUM(t2.qty),0) FROM t_invent AS t2 WHERE t2.status='out' AND t2.used=t1.`id` AND YEAR(t2.tgl)=2023) AS dipakai
+FROM t_invent AS t1 WHERE t1.status='in' AND YEAR(t1.tgl)=2023
+
+DROP TABLE IF EXISTS stock_awal_2024;
+CREATE TABLE stock_awal_2024 AS
+SELECT item_id,kode_barang,'2024-01-01' AS tgl,'IN' AS `status`,'STOK AWAL 2024' AS ref,(qty-dipakai) AS sisa,harga,cust_id FROM stok_closing_2023 WHERE (qty - dipakai) > 0 ;
+
+DELETE FROM t_invent WHERE ref='STOK AWAL 2024';
+INSERT INTO t_invent (item_id,kode_barang,tgl,STATUS,ref,qty,harga,cust_id) SELECT item_id,kode_barang,tgl,STATUS,ref,sisa,harga,cust_id FROM stock_awal_2024 WHERE sisa > 0;

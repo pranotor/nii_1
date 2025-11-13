@@ -1,0 +1,15 @@
+
+master
+    - perkiraan bisa sampe lima level (dicatat level nya)
+
+laporan
+   - neraca format landscape
+   - neraca pilih level
+   - lr pilih level
+   - lr banding perbulan (mirip neraca saldo)
+   - arus kas
+
+cek pembayaran voucher kadang gak lunas padahal sudah lunas
+cek bpp sering masalah ketika posting gak muncul jurnal nya dibawah (malinau)   
+
+

@@ -1,0 +1,83 @@
+{
+  "name": "Saketap",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "apexcharts": "^3.6.5",
+    "auth0-js": "^9.11.3",
+    "axios": "^0.19.2",
+    "chart.js": "^2.8.0",
+    "core-js": "^2.6.5",
+    "dotenv": "^8.2.0",
+    "idle-vue": "^2.0.5",
+    "jqwidgets-scripts": "^8.1.4",
+    "js-file-download": "^0.4.12",
+    "json-pretty-html": "1.0.2",
+    "lodash": "^4.17.19",
+    "material-icons": "^0.3.1",
+    "moment": "^2.24.0",
+    "nprogress": "^0.2.0",
+    "prismjs": "^1.17.1",
+    "qz-tray": "^2.2.1",
+    "vee-validate": "^3.0.8",
+    "vue": "^2.6.10",
+    "vue-apexcharts": "^1.5.0",
+    "vue-awesome-swiper": "^3.1.3",
+    "vue-cookies": "^1.7.0",
+    "vue-currency-input": "^1.19.0",
+    "vue-form-wizard": "^0.8.4",
+    "vue-fullcalendar": "^1.0.9",
+    "vue-prism-component": "^1.1.1",
+    "vue-router": "^3.1.3",
+    "vue-world-map": "^0.1.1",
+    "vue2-datepicker": "^3.6.0",
+    "vuebar": "0.0.20",
+    "vuedraggable": "^2.23.2",
+    "vuesax": "^3.11.15",
+    "vuex": "^3.1.1",
+    "vuex-persistedstate": "^3.0.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.11.0",
+    "@vue/cli-plugin-eslint": "^3.11.0",
+    "@vue/cli-service": "^3.11.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "sass": "^1.93.2",
+    "sass-loader": "^8.0.0",
+    "stylus": "^0.54.8",
+    "stylus-loader": "^3.0.2",
+    "vue-chartjs": "^3.4.2",
+    "vue-i18n": "^8.6.0",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "rules": {},
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
+}

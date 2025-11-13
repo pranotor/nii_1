@@ -1,0 +1,124 @@
+.left-sidebar {
+	.vs-sidebar{
+		position: fixed;
+	}
+	.vb-content{
+		width: calc(100% + 17px)!important;
+	}
+	.vs-sidebar.vs-sidebar-parent {
+		top: $topbar-height;
+		height: calc(100vh - 60px) !important;
+		z-index: 15000;
+	}
+
+	.vs-sidebar--items {
+		overflow: hidden;
+		padding: 15px 0 0;
+	}
+
+	.vs-scrollable {
+		height: 100%;
+	}
+
+	.vs-sidebar--background {
+		z-index: 14000;
+	}
+
+	.vs-sidebar-group {
+		ul {
+			margin: 0px;
+			padding: 0px;
+		}
+		.group-icon{
+			position: relative;
+			font-size:1rem;
+			left:0px;
+			opacity: 1;
+			margin:0 3px;
+		}
+		.group-title{
+			width:100%;
+			padding-left: 5px;
+		}
+		&.vs-sidebar-group-open {
+			>ul {
+				padding: 0px;
+
+				.vs-sidebar--item:last-child {
+					border: 0px;
+				}
+			}
+
+			h4 {
+				font-weight: $font-weight-bold;
+				background:rgba(0,0,0,.02);
+				.group-icon{
+					transform: rotate(0deg);
+				}
+			}
+		}
+
+		h4 {
+			font-size: $sidebarfont-size;
+			font-weight: 400;
+			padding: 15px;
+			align-items: center;
+			
+		}
+	}
+
+	.small-cap {
+		padding: 25px 15px 10px 10px;
+		display: block;
+		font-size: 12px;
+		font-weight: $font-weight-bold;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+
+	.vs-sidebar--item a {
+		padding: 15px;
+		font-size: $sidebarfont-size;
+		line-height: 14px;
+		i{
+			margin: 0 7px 0 5px;
+		}
+	}
+
+	.vs-sidebar.vs-sidebar-reduce {
+		max-width: $mini-sidebar;
+
+		.hide-in-minisidebar {
+			visibility: hidden;
+			white-space: nowrap;
+		}
+
+		&:hover .hide-in-minisidebar {
+			visibility: visible;
+		}
+
+		.vs-sidebar--item i.material-icons,
+		.vs-sidebar--item i {
+			margin-right: 7px;
+			padding: 0;
+		}
+	}
+
+	.vs-sidebar-primary a.router-link-exact-active {
+		border-left:0px solid rgba(var(--vs-primary), 1);
+		font-weight: bold;
+		color: rgba(var(--vs-primary), 1) !important;
+		opacity: 1 !important;
+	}
+}
+
+.main-wrapper-full {
+	.left-sidebar .vs-sidebar.vs-sidebar-parent {
+		top: 0;
+		height: 100% !important;
+	}
+	.left-sidebar .vb-content{
+		width: calc(100% + 0px)!important;
+	}
+}

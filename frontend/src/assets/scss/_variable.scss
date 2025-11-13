@@ -1,0 +1,168 @@
+/*******************************/
+// Custom Variables
+/*******************************/
+
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800');
+
+//
+// Sidebar
+//
+$full-sidebar:260px;
+$mini-sidebar:60px;
+$sidebarfont-size:14px;
+//topbar
+$topbar-height: 60px;
+$logo-padding:0 12px;
+//
+// Color system
+//
+$body-color: #2b2b2b;
+$body-bg:#f0f5f9;
+$primary: #2962FF;
+$success: #36bea6;
+$danger: #f62d51;
+$warning: #ffbc34;
+$dark: #212529;
+$grey: #dee2e6;
+$grey-light: #e8e8e8;
+$white: #fff;
+$black: #2b2b2b;
+$border-color:rgba(0, 0, 0, 0.06);
+$info: #4fc3f7;
+
+$light-primary: #e6ecfc;
+$light-warning: #fff8ec;
+$light-success: #e8fdf8;
+$light-danger: #f9e7eb;
+
+//
+// Font family / Typography
+//
+
+$font-size-base: 0.875rem;
+$font-family-sans-serif: 'Nunito Sans',
+sans-serif !default;
+
+
+$font-weight-light: 300 !default;
+$font-weight-normal: 400 !default;
+$font-weight-medium: 600 !default;
+$font-weight-bold: 800 !default;
+
+
+$h1-font-size: 36px !default;
+$h2-font-size: 30px !default;
+$h3-font-size: 20px !default;
+$h4-font-size: 18px !default;
+$h5-font-size: 16px !default;
+$h6-font-size: 14px !default;
+
+$line-height-base: 1.625rem !default;
+
+$headings-font-family: inherit !default;
+$headings-font-weight: 700 !default;
+$headings-line-height: 1.2 !default;
+$headings-margin-bottom: 0px !default;
+
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+$font-weight-base: $font-weight-normal;
+$line-height-base: 1.45;
+
+$content-color: #626262;
+
+// Tables
+$table-cell-padding: 1rem !default;
+
+
+// Style anchor elements.
+
+$link-color: $primary !default;
+$link-decoration: none !default;
+$link-hover-color: darken($link-color, 15%) !default;
+$link-hover-decoration: underline !default;
+
+
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+$grid-breakpoints: (xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 1169px,
+  xl: 1600px) !default;
+
+
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+$container-max-widths: (sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px) !default;
+
+
+// Spacing
+//
+// Control the default styling of most Bootstrap elements by modifying these
+// variables. Mostly focused on spacing.
+// You can add more entries to the $spacers map, should you need more variation.
+
+$spacer: 1rem !default;
+$spacers: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$spacers: map-merge((0: 0,
+    1: ($spacer * .25),
+    2: ($spacer * .5),
+    3: $spacer,
+    4: ($spacer * 1.5),
+    5: ($spacer * 3)),
+  $spacers);
+
+
+// Vuesax column
+
+$vs-column-bottom-margin:20px;
+$vs-column-padding: 0 10px;
+$border-radius:100%;
+$theme-radius:4px;
+
+// S Comments
+$border-color: rgba(0, 0, 0, 0.1);
+$input-border-color: rgba(0, 0, 0, .2);
+
+$text-muted: #a1aab2;
+
+$badge-pill-padding-x: 10px;
+$badge-padding-y: 5px;
+
+/*========================================================
+        DARK THEME
+=========================================================*/
+
+$sidebar-dark-bg: #10163a;
+$content-dark-bg: #262c49;
+$dark-card-color: #10163a;
+$table-dark-stripe: #212744;
+$table-light-stripe: #262c49;
+$grid-dark-color: #343661;
+
+
+$theme-dark-bg: #10163a;
+$theme-dark-text-color: #c2c6dc;
+$theme-dark-heading-color: #ebeefd;
+
+
+//
+// Color system
+//
+$dark-body-color: rgba(255,255,255,0.7);
+$dark-body-bg:#394156;
+$dark-card-color: #252c3e;
+$dark-text-color: rgba(255,255,255,0.5);
+$dark-background-color: rgba(255,255,255,0.2);

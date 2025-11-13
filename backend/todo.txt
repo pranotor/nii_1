@@ -1,0 +1,13 @@
+tgl 26
+- so no SO-0010.07.22 yang tgl 30/6 diganti jadi SO-0253.06.22
+
+
+- bank in           1 hr
+- edit produksi     2 hr
+
+- edit so jika berubah P/N
+    - edit jangan hapus quotation dan detail
+
+
+
+edit PD-0077.06.22 jadi 75+50 asalnya 50

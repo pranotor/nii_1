@@ -1,0 +1,1 @@
+SELECT p.`prod_no`,p.`prod_tgl`,w.`wo_no`,q.`qt_no` FROM t_produksi AS p INNER JOIN t_wo AS w ON p.`wo_id` = w.`id` LEFT JOIN t_quotation AS q ON w.`qt_id` = q.`id`

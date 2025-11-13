@@ -1,0 +1,3 @@
+- quotation ada pilih sales.. sales ngunci di customer
+- sales order bisa langsung tanpa quotation
+- quotation bisa export ke excel

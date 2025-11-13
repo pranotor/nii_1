@@ -1,0 +1,25 @@
+.customizer-panel .vs-sidebar {
+	padding: 5px 15px 15px;
+	max-width: 300px;
+}
+
+body .btn-customizer {
+	position: fixed;
+	top: 50%;
+	right: -1px;
+	height: 48px;
+	z-index: 10;
+	padding: 12px 15px;
+	border-radius: 60px 0 0 60px;
+}
+
+.customizer-list {
+	li {
+		width: 20px;
+		height: 20px;
+		border-radius: 100%;
+		margin: 5px 5px;
+		border: 1px solid rgba(0, 0, 0, 0.2);
+		cursor: pointer;
+	}
+}

@@ -1,0 +1,1 @@
+SELECT id,prod_no,prod_tgl,wo_id FROM t_produksi WHERE YEAR(prod_tgl) = 2024 AND id NOT IN (SELECT prod_id FROM t_quotationd)

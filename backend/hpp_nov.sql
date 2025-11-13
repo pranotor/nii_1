@@ -1,0 +1,1 @@
+SELECT * FROM t_invent WHERE keterangan='SO-10015.11.24|WIJAYA KARYA - CIBUBUR';

@@ -1,0 +1,73 @@
+.chatapp{
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    .vs-card--content{
+        padding: 0px;
+        margin: 0px;
+    }
+    .vs-sidebar--background{
+        position: absolute;
+    }
+    .vs-sidebar{
+        max-width: $full-sidebar;
+        
+        box-shadow: none;
+        border-right: 1px solid $border-color;
+        .vs-sidebar--items{
+            overflow: hidden;
+        }
+        
+    }
+    .chat-userlist{
+        height:calc(100vh - 280px);
+        
+        li{
+            display: flex;
+            cursor: pointer;
+            padding: 10px;
+            align-items: center;
+            .user-about{
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                width: 100%;
+            }
+            .con-vs-avatar{
+                flex-shrink: 0;
+                margin-right: 8px;
+            }
+        }
+    }
+    .chat-room{
+        height:calc(100vh - 330px);
+        padding: 1rem;
+        .fromMe{
+            justify-content: flex-start;
+            flex-direction: row-reverse;
+            .messageBody{
+                background:rgba(var(--vs-primary), 1);
+                color:$white;
+            }
+        }
+        .messageBody{
+            padding: 8px;
+            margin: 0 8px;
+            background:rgba(var(--vs-primary), 0.1);
+            border-radius: $theme-radius;
+        }
+    }
+    .send-message{
+        .form-control{
+            border-radius: 0px;
+            height: 60px;
+            border:0px;
+            border-top:1px solid $border-color;
+            &:focus{
+                box-shadow: none;
+            }
+        }
+    }
+}
+
+

@@ -1,0 +1,196 @@
+.topnavbar {
+	color: $white;
+	min-height: $topbar-height;
+	position: fixed;
+
+	.vs-navbar--item {
+		color: $white !important;
+	}
+
+	&.vs-navbar-color-white {
+		color: $body-color !important;
+
+		.vs-navbar--item {
+			color: $body-color !important;
+		}
+
+		.vs-navbar--btn-responsive .btn-responsive-line {
+			background: rgba(0, 0, 0, 0.6);
+		}
+	}
+
+	.vs-con-items {
+		width: 100%;
+	}
+
+	.vs-navbar--header {
+		display: flex;
+		align-items: center;
+	}
+
+	.vs-navbar--btn-responsive {
+		.btn-responsive-line {
+			background: rgba(255, 255, 255, 0.8);
+			width: 3px;
+			border-radius: 100%;
+		}
+
+		&.active-menu .btn-responsive-line {
+			width: 18px;
+		}
+	}
+}
+
+.themelogo {
+	display: flex;
+	min-width: $full-sidebar;
+	align-items: center;
+	padding: $logo-padding;
+
+	.logo-text {
+		font-size: 20px;
+		font-weight: $font-weight-bold;
+	}
+}
+
+.main-wrapper-mini,
+.main-wrapper-full {
+	.themelogo .logo-text {
+		display: none;
+	}
+}
+
+.main-wrapper-mini {
+	.themelogo {
+		min-width: $mini-sidebar;
+	}
+}
+
+.main-wrapper-full {
+	.themelogo {
+		min-width: auto;
+	}
+}
+
+
+.user-image {
+	img {
+		border-radius: $border-radius;
+		width: 32px;
+	}
+}
+
+/******Common DD width *******/
+.common-dd {
+	width: 280px;
+	border-radius: 2px;
+
+	.vs-dropdown--menu {
+		padding: 0px;
+		border: 0px;
+		overflow: hidden;
+	}
+
+	&::after,
+	.vs-dropdown--menu--after {
+		display: none;
+	}
+}
+
+// 
+// For Responsive
+// 
+@media only screen and (max-width:800px) {
+	.vs-navbar--header {
+		flex-direction: row-reverse;
+		min-height: $topbar-height;
+		padding: 0 15px;
+	}
+
+	.vs-con-items.activeMenuResponsive {
+		background: rgba(0, 0, 0, 0.2);
+		padding: 10px;
+		display: flex;
+	}
+}
+
+// 
+// Navbar Dropdown
+// 
+
+
+$droptitle-bg: url(../images/background/img5.png) no-repeat;
+
+/*******************
+/*User mail widgets*/
+/*******************/
+.mailbox {
+	.drop-title {
+		position: relative;
+
+		&:after {
+			content: "";
+			position: absolute;
+			background: $droptitle-bg;
+			opacity: 0.2;
+			top: 0px;
+			left: 0px;
+			height: 100%;
+			width: 100%;
+			background-size: cover;
+		}
+	}
+
+	.vs-dropdown--menu {
+		border: 0;
+		padding-bottom: 0;
+	}
+
+	.message-center {
+		.message-title {
+			color: $gray-900;
+		}
+
+		.user-img {
+			width: 40px;
+
+			img {
+				width: 100%;
+			}
+
+			.profile-status {
+				border: 2px solid $white;
+				border-radius: 50%;
+				height: 10px;
+				left: 30px;
+				top: 1px;
+				width: 10px;
+			}
+
+			.online {
+				background: $success;
+			}
+
+			.busy {
+				background: $danger;
+			}
+
+			.away {
+				background: $warning;
+			}
+
+			.offline {
+				background: $secondary;
+			}
+		}
+
+		.mail-contnet {
+
+			.mail-desc,
+			.time {
+				font-size: 12px;
+				margin: 1px 0;
+			}
+		}
+	}
+}

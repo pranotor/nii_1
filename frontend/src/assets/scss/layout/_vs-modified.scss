@@ -1,0 +1,425 @@
+// /////////////////////////////////////////////////////// //
+// Table Content
+// /////////////////////////////////////////////////////// //
+//  1) Vuesax Component: Alert
+//  2) Vuesax Component: Breadcrumb
+//  3) Vuesax Component: Button
+//  4) Vuesax Component: Card
+//  5) Vuesax Component: Dropdown
+//  6) Vuesax Component: Icon
+//  7) Vuesax Component: Input
+//  8) Vuesax Component: List
+//  9) Vuesax Component: Notification
+//  10) Vuesax Component: Pagination
+//  11) Vuesax Component: Row-Col
+//  12) Vuesax Component: Switch
+//  13) Vuesax Component: Sidebar
+//  14) Vuesax Component: Select
+//  15) Vuesax Component: Table
+//  16) Vuesax Component: Tabs
+//  17) Responsive
+//  18) Custom Style
+// /////////////////////////////////////////////////////// //
+
+// 
+//  1) Vuesax Component: Alert
+// 
+.vs-alert {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// 
+//  2) Vuesax Component: Breadcrumb
+// 
+.vs-breadcrumb--ol {
+  align-items: center;
+}
+
+// 
+//  3) Vuesax Component: Button
+// 
+.vs-button.small {
+  padding: 7px 15px;
+}
+
+.btn-alignment {
+  .vs-button {
+    margin-bottom: 5px;
+    margin-right: 5px;
+  }
+}
+
+.vs-button {
+  border-radius: $theme-radius;
+}
+
+.vs-button .vs-icon {
+  font-size: 1rem;
+}
+
+// 
+//  4) Vuesax Component: Card
+// 
+.con-vs-card {
+  margin-bottom: $vs-column-bottom-margin;
+  border-radius: $theme-radius;
+
+  .vs-card--content,
+  .vs-card--header {
+    padding: 20px;
+  }
+
+  .vs-card--content {
+    font-size: $font-size-base
+  }
+}
+
+.card-no-shadow {
+  .vs-card--header, .vs-tabs--ul {
+    box-shadow: none;
+  }
+}
+
+// 
+//  5) Vuesax Component: Dropdown
+// 
+.vs-dropdown--item .vs-dropdown--item-link {
+  padding: 10px;
+}
+
+.dropdownbtn-alignment {
+  .btnx {
+    border-radius: $theme-radius 0 0 $theme-radius;
+  }
+
+  .btn-drop {
+    border-radius: 0 $theme-radius $theme-radius 0;
+    border-left: 1px solid $border-color;
+  }
+
+  .vs-button {
+    padding: 9px;
+  }
+}
+
+// 
+//  6) Vuesax Component: Icon
+//
+.small-icon .vs-icon {
+  font-size: 17px;
+}
+
+.vs-icon {
+  vertical-align: middle;
+}
+
+.vs-input-large .vs-icon {
+  top: 13px;
+  border-left: 0px;
+}
+
+.vs-checkbox--check .vs-icon,
+.vs-input--icon {
+  font-size: 1rem;
+}
+
+.vs-select--icon {
+  font-size: 18px !important;
+  right: 5px;
+}
+
+.vs-input--icon.icon-no-border {
+  padding: 0 3px;
+}
+
+.m-icon {
+  width: 33%;
+  display: inline-block;
+  cursor: pointer;
+  padding: 13px 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  &:hover {
+    background-color: $gray-100;
+  }
+}
+
+// 
+//  7) Vuesax Component: Input
+// 
+.vs-input--input {
+  border-radius: 2px;
+}
+
+.vs-input-number {
+  display: inline-flex;
+}
+
+.vs-input--icon.icon-after {
+  padding: 0 3px;
+}
+
+.vs-con-textarea,
+.vs-select--input,
+.vs-input--input {
+  border-radius: $theme-radius;
+  border: 1px solid $input-border-color !important;
+}
+
+.vs-input--label,
+.vs-select--label {
+  font-weight: 600;
+  color: $body-color;
+}
+
+// 
+//  8) Vuesax Component: List
+// 
+.list-alignment {
+  li {
+    margin-bottom: 10px;
+    margin-right: 5px;
+  }
+}
+
+// 
+//  9) Vuesax Component: Notification
+// 
+.vs-notifications {
+  border-radius: $theme-radius;
+}
+
+// 
+//  10) Vuesax Component: Pagination
+// 
+.vs-pagination--ul {
+  margin-bottom: 0;
+}
+
+// 
+//  11) Vuesax Component: Row-Col
+// 
+.vs-row>.vs-col {
+  padding: $vs-column-padding;
+}
+
+.vs-row {
+  margin: 0 -10px;
+  width: auto !important;
+}
+
+// 
+//  12) Vuesax Component: Switch
+// 
+.vs-switch--text {
+  .vs-icon {
+    font-size: 12px;
+  }
+}
+
+// 
+//  13) Vuesax Component: Sidebar
+// 
+.vs-sidebar-primary .vs-sidebar-item-active {
+  font-weight: normal;
+  border-right: 0px !important;
+
+  a {
+    opacity: 0.8 !important;
+    color: inherit !important;
+  }
+}
+
+.collapse:not(.show) {
+  display: block;
+}
+
+// 
+//  14) Vuesax Component: Select
+// 
+.con-select.activeOptions:not(.autocompletex) .input-select {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+.vs-select--options {
+  margin-top: 30px;
+}
+
+// 
+//  15) Vuesax Component: Table
+//
+th .sort-th,
+th .vs-table-text {
+  padding: 10px;
+}
+
+.vs-table--tbody-table .tr-values td {
+  padding: 16px;
+}
+
+.vs-table--search {
+  margin: 15px;
+}
+
+#contact-table {
+  .con-td-check {
+    box-shadow: none
+  }
+    .vs-table--pagination {
+      justify-content: center;
+    }
+}
+
+// 
+//  16) Vuesax Component: Tabs
+//
+.vs-tabs--ul {
+  margin-bottom: 0;
+}
+
+//
+//  17) Responsive
+//
+@include media-breakpoint-down(md) {
+  .topbar-dd.con-vs-dropdown--menu.vs-dropdown-menu.rightx {
+    left: 97.5vw !important;
+    width: 95vw;
+
+    .vs-dropdown--menu--after {
+      display: none;
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .m-icon {
+    width: 100%;
+  }
+}
+
+//
+//  18) Custom Style
+//
+.custom-hr {
+  margin: 15px -20px;
+}
+
+.w-100px {
+  width: 100px;
+}
+
+.fill-color {
+  fill: currentColor !important;
+}
+
+.active-user-card {
+  background: url(../images/background/active-bg.png) no-repeat top center #ffffff;
+}
+
+.tag-item {
+  span {
+    display: flex;
+
+    .popover-icon {
+      .plus-btn {
+        width: 40px;
+        height: 40px;
+        padding-left: 15px;
+      }
+
+      .popover-item {
+        margin-left: -15px;
+
+        &:hover {
+          z-index: 10;
+          position: relative;
+        }
+      }
+    }
+  }
+}
+
+.op-5 {
+  opacity: .5;
+}
+
+/*******************/
+/*Comment widgets*/
+/*******************/
+
+.comment-widgets {
+  .comment-row {
+    border-bottom: 1px solid transparent;
+
+    &:last-child {
+      border-bottom: 0px;
+    }
+
+    &:hover,
+    &.active {
+      background: $gray-100;
+    }
+  }
+
+  .comment-text {
+
+    &:hover .comment-footer,
+    &.active .comment-footer {
+      .action-icons {
+        visibility: visible;
+      }
+    }
+  }
+
+  .comment-footer {
+    .action-icons {
+      visibility: hidden;
+
+      a {
+        color: $gray-500;
+
+        &:hover,
+        &.active {
+          color: $primary;
+        }
+      }
+    }
+  }
+}
+
+.card-no-padding {
+  .vs-card--content {
+    padding: 0;
+  }
+}
+
+.display-7 {
+  font-size: 27px;
+}
+
+.display-8 {
+  font-size: 22px;
+}
+
+.productsales-margin {
+  margin-top: -65px;
+}
+
+@include media-breakpoint-down(sm) {
+  .productsales-margin {
+    margin-top: 0;
+  }
+}
+
+// Chart Inner Icons
+.chart-inner-icon {
+  position: absolute;
+  top: 20px;
+  left: 47px;
+}

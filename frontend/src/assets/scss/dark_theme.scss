@@ -1,0 +1,74 @@
+
+.dark-theme {
+    background: $dark-body-bg;
+    color:$dark-body-color;
+    /************************************
+    All background and colors changes
+    ************************************/
+    /*Main body-bg*/
+    .main-container-fluid, .vs-select--options,select, .con-vs-dialog .vs-dialog header .vs-dialog-cancel,.vue-form-wizard .wizard-icon-circle.tab_shape, .vue-form-wizard .wizard-icon-circle, .vs-pagination--ul, .con-input-upload, .badge-light, .vs-textarea {
+        background: $dark-body-bg;
+        color:$dark-body-color;
+    }
+    
+    /************************************
+    All Card type Backgrounds changes
+    ************************************/
+
+    /*Card bg*/
+    .con-vs-card, .vs-select--input,  .vs-table--tbody-table tr,.list-group-item,  .vs-sidebar, .vs-input--input, input[type=text], .con-vs-dialog .vs-dialog header, th.td-check .con-td-check{
+        background-color:$dark-card-color; 
+    }
+
+    /************************************
+    All light type Backgrounds changes
+    ************************************/
+    hr, .comment-widgets .comment-row:hover, .comment-widgets .comment-row.active,  .vs-select--item:focus, .vs-select--item:hover {
+        background-color:$dark-background-color!important; 
+    }
+    /************************************
+    All text colors changes
+    ************************************/
+    
+    /*Bread Crumb*/
+    .vs-breadcrumb--ol a, .vs-select--item,pre, .vs-sidebar, input, .vs-input--placeholder, .vs-input--icon, .vs-input--label, .vs-select--label, .vs-pagination--li, .table, .mailbox .message-center .message-title{
+        color:$dark-body-color;
+    }
+
+    /************************************
+    All border colors changes
+    ************************************/
+    .border-top, .vs-select--item,.table th,.vdp-datepicker__calendar, .table td, input, .vs-collapse-item, .vue-form-wizard .wizard-icon-circle, .vs-list--item, .border, .full-calendar-body .weeks, .vs-textarea, .full-calendar-body .dates .week-row, .full-calendar-body .dates .week-row .day-cell{
+        border-color:$dark-background-color!important
+    }
+
+
+    .chatapp .chat-room, .comp-full-calendar,.m-icon:hover,.vdp-datepicker__calendar, .con-vs-dialog .vs-dialog, .vs-con-table,  .bg-light, .con-img-upload, .vs-dropdown--menu{
+        background: #1f2535!important;
+    }
+
+    .vs-button, .text-dark, .vs-tabs--li button.vs-tabs--btn{
+        color:rgba(255,255,255,0.7)!important;
+    }
+    a.text-dark:hover, a.text-dark:focus{
+        color:rgba(255,255,255,1)!important;
+    }
+
+
+    .todo-cards .con-vs-card{
+        background-color: #465373;
+    }
+
+    .progress-cards .con-vs-card{
+        background-color: #695637;
+    }
+    .completed-cards .con-vs-card{
+        background-color: #4c7b70;
+    }
+    .hold-cards .con-vs-card{
+        background-color: #71535a;
+    }
+    .con-vs-chip.vs-chip-null{
+        background-color: #a3aabd;
+    }
+}
