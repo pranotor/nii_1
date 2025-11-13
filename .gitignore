@@ -78,7 +78,7 @@ public/css/
 *.swp
 *.swo
 *.orig
-*.zip
+
 
 # Custom backup or exported Docker volumes
 backup/
