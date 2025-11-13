@@ -36,8 +36,7 @@ temp/
 docker-data/
 volumes/
 *.tar.gz
-*.sql
-*.db
+
 
 # Docker Compose override
 docker-compose.override.yml
