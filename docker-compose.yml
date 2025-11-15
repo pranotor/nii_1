@@ -23,6 +23,8 @@ services:
       PHP_MEMORY_LIMIT: 512M
     volumes:
       - ./backend:/var/www
+      - /var/www/vendor
+    command: php artisan serve --host=0.0.0.0 --port=8000
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.backend.rule=Host(`nii.test`)"
@@ -46,7 +48,27 @@ services:
       - backend
     networks:
       - appnet
+      
+  mysql:
+    image: mysql:8.0
+    container_name: mysql_nii
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: nii_db
+      MYSQL_USER: nii
+      MYSQL_PASSWORD: nii123
+    volumes:
+      - ./mysql/conf.d:/etc/mysql/conf.d
+      - ./mysql/mysql_data:/var/lib/mysql
+    ports:
+      - "3307:3306"   # host port 3307 -> mysql inside 3306
+    networks:
+      - appnet
 
 networks:
   appnet:
     driver: bridge
+
+volumes:
+  mysql_data:

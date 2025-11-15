@@ -83,6 +83,7 @@ public/css/
 # Custom backup or exported Docker volumes
 backup/
 backups/
+mysql/mysql_data/
 
 # ==========================================
 # ✅ END OF FILE
